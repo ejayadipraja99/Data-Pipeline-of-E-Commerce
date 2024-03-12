@@ -21,8 +21,13 @@ into Elasticsearchm using E-Commerece dataset.
 
 ## Results
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
+![App Screenshot](./images/airflow.png)
+![App Screenshot](./images/plot%20&%20insight%2001.png)
+![App Screenshot](./images/plot%20&%20insight%2002.png)
+![App Screenshot](./images/plot%20&%20insight%2003.png)
+![App Screenshot](./images/plot%20&%20insight%2004.png)
+![App Screenshot](./images/plot%20&%20insight%2005.png)
+![App Screenshot](./images/plot%20&%20insight%2006.png)
 
 ## Conclusion
 

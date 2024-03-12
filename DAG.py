@@ -1,10 +1,6 @@
 '''
 =======================================================
-Milestone 3
-
-Nama : Erlangga Jayadipraja
-
-Batch : SBY - 002
+Name : Erlangga Jayadipraja
 
 This program was created to automate data fetch from the PostgreSQL 
 database, Data Cleaning process, and load CSV clean data to be loaded 
@@ -32,14 +28,14 @@ def fetch_data():
     df = pd.read_sql("select * from table_m3", conn)
 
     # Save raw data from SQL
-    df.to_csv('/opt/airflow/data/P2M3_erlangga_jayadipraja_data_raw.csv', index=False)
+    df.to_csv('data_raw.csv', index=False)
 
 def data_cleaning():
     '''
     This function is intended to cleaning raw data and save the clean data to CSV
     '''
     # Read Raw Data
-    df = pd.read_csv('/opt/airflow/data/P2M3_erlangga_jayadipraja_data_raw.csv', index_col=False)
+    df = pd.read_csv('data_raw.csv', index_col=False)
 
     # Rename columns name to give whitespace between word
     df.rename(columns= {"CustomerID":"Customer ID","PreferredLoginDevice":"Preferred Login Device","CityTier":"City Tier",
@@ -64,7 +60,7 @@ def data_cleaning():
          df.dropna(inplace=True)
 
     # Save clean data
-    df.to_csv('/opt/airflow/data/P2M3_erlangga_jayadipraja_data_clean.csv', index=True)
+    df.to_csv('data_clean.csv', index=True)
     
 def post_to_es():
     '''
@@ -72,7 +68,7 @@ def post_to_es():
     '''
 
     # Data Read
-    df = pd.read_csv('/opt/airflow/data/P2M3_erlangga_jayadipraja_data_clean.csv', index_col=False)
+    df = pd.read_csv('data_clean.csv', index_col=False)
     es = Elasticsearch("Elasticsearch")
     es.ping()
 
